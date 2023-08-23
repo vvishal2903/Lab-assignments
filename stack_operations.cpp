@@ -46,9 +46,9 @@ public:
     {
         if(!isEmpty())
         {
-            for(int i=0;i<capacity;i++)
+            for(int i=0;i<top;i++)
             {
-                cout<<"Element at index "<<i<<"="<<items[i];
+                cout<<"Element at index "<<i<<"="<<items[i]<<endl;
             }
         }
         else{
