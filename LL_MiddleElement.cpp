@@ -1,30 +1,29 @@
 #include <iostream>
 
-// Define a structure for a node in the linked list
+using namespace std;
 struct Node {
     int data;
     Node* next;
     Node(int val) : data(val), next(nullptr) {}
 };
 
-// Function to find the middle element of a linked list
+
 Node* findMiddle(Node* head) {
     if (head == nullptr) {
-        return nullptr; // Empty list
+        return nullptr; 
     }
 
     Node* slow_ptr = head;
     Node* fast_ptr = head;
 
     while (fast_ptr != nullptr && fast_ptr->next != nullptr) {
-        slow_ptr = slow_ptr->next;         // Move slow_ptr by one step
-        fast_ptr = fast_ptr->next->next;   // Move fast_ptr by two steps
+        slow_ptr = slow_ptr->next;         
+        fast_ptr = fast_ptr->next->next;   
     }
 
-    return slow_ptr; // The slow_ptr is now at the middle element
+    return slow_ptr; 
 }
 
-// Function to print the linked list
 void printList(Node* head) {
     Node* current = head;
     while (current != nullptr) {
@@ -35,7 +34,6 @@ void printList(Node* head) {
 }
 
 int main() {
-    // Creating a sample linked list
     Node* head = new Node(1);
     head->next = new Node(2);
     head->next->next = new Node(3);
@@ -53,7 +51,6 @@ int main() {
         std::cout << "The list is empty." << std::endl;
     }
 
-    // Free the memory
     while (head != nullptr) {
         Node* temp = head;
         head = head->next;
